@@ -1,0 +1,23 @@
+{
+  "name": "ultimate-react-flask",
+  "authors": [
+    "Prashant Khanduri <prashant.khanduri@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.2",
+    "jquery": "~2.1.3",
+    "react": "~0.12.2"
+  }
+}
