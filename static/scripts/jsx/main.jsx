@@ -70,37 +70,39 @@ var DownloadPage = React.createClass({
 });
 
 
-var ContactPage = React.createClass({
+var ContactComponent = React.createClass({
   render: function(){
+
+    var contact = this.props.items;
+
     return (
-    <section id="contact" className="container content-section text-center">
+      <section id="contact" className="container content-section text-center">
         <div className="row">
-            <div className="col-lg-8 col-lg-offset-2">
-                <h2>Contact Start Bootstrap</h2>
-                <p>Feel free to email us to provide some feedback on our templates, give us suggestions for new templates and themes, or to just say hello!</p>
-                <p><a href="mailto:feedback@startbootstrap.com">feedback@startbootstrap.com</a>
-                </p>
-                <ul className="list-inline banner-social-buttons">
-                    <li>
-                        <a href="https://twitter.com/SBootstrap" className="btn btn-default btn-lg"><i className="fa fa-twitter fa-fw"></i> <span className="network-name">Twitter</span></a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/IronSummitMedia/startbootstrap" className="btn btn-default btn-lg"><i className="fa fa-github fa-fw"></i> <span className="network-name">Github</span></a>
-                    </li>
-                    <li>
-                        <a href="https://plus.google.com/+Startbootstrap/posts" className="btn btn-default btn-lg"><i className="fa fa-google-plus fa-fw"></i> <span className="network-name">Google+</span></a>
-                    </li>
-                </ul>
-            </div>
+          <div className="col-lg-8 col-lg-offset-2">
+            <h2>Contact</h2>
+            <ul className="list-inline banner-social-buttons">
+              {contact.twitter ? <li><a href={"https://twitter.com/" + contact.twitter} className="btn btn-default btn-lg"><i className="fa fa-twitter fa-fw"></i> <span className="network-name">Twitter</span></a></li>: null }
+              {contact.github ? <li><a href={"https://github.com/" + contact.github} className="btn btn-default btn-lg"><i className="fa fa-github fa-fw"></i> <span className="network-name">Github</span></a></li>: null }
+              {contact.linkedin ? <li><a href={"https://www.linkedin.com/in/"+contact.linkedin} className="btn btn-default btn-lg"><i className="fa fa-linkedin fa-fw"></i> <span className="network-name">LinkedIn</span></a></li>: null }
+              {contact.facebook ? <li><a href={"https://www.facebook.com/"+contact.facebook} className="btn btn-default btn-lg"><i className="fa fa-facebook fa-fw"></i> <span className="network-name">Facebook</span></a></li>: null }
+            </ul>
+          </div>
         </div>
-    </section>
+      </section>
     )
   }
 });
 
 
+var contact = {
+  github: 'khanduri',
+  twitter: 'khandurip',
+  linkedin: 'prashantkhanduri',
+  facebook: 'prashant.khanduri'
+}
+
 React.render(<NavigationComponent />, document.getElementById('navigation'));
 React.render(<AboutPage />, document.getElementById('about'));
-React.render(<DownloadPage />, document.getElementById('download'));
-React.render(<ContactPage />, document.getElementById('contact'));
+React.render(<DownloadPage />, document.getElementById('projects'));
+React.render(<ContactComponent items={contact}/>, document.getElementById('contact'));
 
