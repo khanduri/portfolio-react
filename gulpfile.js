@@ -16,12 +16,12 @@ var gulp = require('gulp'),
 gulp.task('default', function(){
   gulp.start('transform');
   gulp.watch('./sass/**/*.scss', ['sass']);
-  gulp.watch('static/scripts/jsx/main.jsx', ['transform']);
+  gulp.watch('static/scripts/jsx/*.jsx', ['transform']);
 });
 
 gulp.task('transform', ['clean'], function(){
   // The transformer is not working for me .. I'm just using the client side transformer
-  return gulp.src('static/scripts/jsx/main.jsx')
+  return gulp.src('static/scripts/jsx/*.jsx')
     // .pipe(browserify({transform: [reactify]}))
     // .pipe(jsx({factory: 'React.createClass'}))
     // .pipe(react({harmony: false,}))
