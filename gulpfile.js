@@ -8,13 +8,15 @@ var gulp = require('gulp'),
     // jsx = require('gulp-jsx'),
     // react = require('gulp-react'),
     concat = require('gulp-concat'),
-    clean = require('gulp-clean');
+    clean = require('gulp-clean'),
+    sass = require('gulp-sass');
 
 
 // Tasks
 gulp.task('default', function(){
- gulp.start('transform');
- gulp.watch('static/scripts/jsx/main.jsx', ['transform']);
+  gulp.start('transform');
+  gulp.watch('./sass/**/*.scss', ['sass']);
+  gulp.watch('static/scripts/jsx/main.jsx', ['transform']);
 });
 
 gulp.task('transform', ['clean'], function(){
@@ -34,5 +36,11 @@ gulp.task('clean', function(){
         'static/scripts/js/compiled'
       ], {read: false})
     .pipe(clean());
+});
+
+gulp.task('sass', function () {
+  return gulp.src('static/styles/scss/main.scss')
+    .pipe(sass.sync().on('error', sass.logError))
+    .pipe(gulp.dest('static/styles/css'));
 });
 
