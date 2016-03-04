@@ -1,4 +1,6 @@
 
+
+/* Navigation */
 var NavigationComponent = React.createClass({
   render: function(){
     return (
@@ -29,9 +31,10 @@ var NavigationComponent = React.createClass({
     )
   }
 });
+React.render(<NavigationComponent />, document.getElementById('navigation'));
 
 
-
+/* About */
 var AboutComponent = React.createClass({
   render: function(){
     return (
@@ -52,13 +55,37 @@ var AboutComponent = React.createClass({
     )
   }
 });
+React.render(<AboutComponent />, document.getElementById('about'));
 
+
+/* Activities */
+var activities = {
+        projects: [
+          {name: 'Portfolio Generator - This site', link: 'https://github.com/khanduri/portfolio-react'},
+          {name: 'Workout Generator', link: 'https://workoutgen-stage.herokuapp.com/'},
+          {name: 'color.js', link: 'https://github.com/khanduri/color.js'},
+          {name: 'EZ Apps - iOS apps', link: 'http://ezapps.herokuapp.com/'},
+          {name: 'Structure extractor - Craigslist', link: ''},
+          {name: 'Transliteration - En to Hi', link: ''},
+          {name: 'ANN - Emotion Recognition', link: ''},
+          {name: 'Sudoku Solver - CSP', link: ''}
+        ],
+        groups: [
+          {name: 'Asha for Education', link: ''},
+          {name: 'Ekal Vidyalaya', link: ''},
+          {name: 'USC Trekkers group', link: ''},
+          {name: 'Engineering Exploration Volunteer', link: ''}
+        ],
+        hobbies: [
+          {name: 'Tennis / Racquet ball enthusiast', link: ''},
+          {name: 'Playing any outdoor sport', link: ''},
+          {name: 'Practicing Yoga', link: ''}
+        ]
+      }
 
 var ProjectsComponent = React.createClass({
   render: function(){
     var activities = this.props.items;
-
-// { countries.map(function(country){ return <li>{country.name}</li>}) }
 
     return (
       <section id="projects" className="">
@@ -92,7 +119,16 @@ var ProjectsComponent = React.createClass({
     )
   }
 });
+React.render(<ProjectsComponent items={activities}/>, document.getElementById('projects'));
 
+
+/* Contact */
+var contact = {
+  github: 'khanduri',
+  twitter: 'khandurip',
+  linkedin: 'prashantkhanduri',
+  facebook: 'prashant.khanduri'
+}
 
 var ContactComponent = React.createClass({
   render: function(){
@@ -116,40 +152,102 @@ var ContactComponent = React.createClass({
     )
   }
 });
+React.render(<ContactComponent items={contact}/>, document.getElementById('contact'));
 
 
-var contact = {
-  github: 'khanduri',
-  twitter: 'khandurip',
-  linkedin: 'prashantkhanduri',
-  facebook: 'prashant.khanduri'
-}
-
-var activities = {
-        projects: [
-          {name: 'Workout Generator', link: 'https://workoutgen-stage.herokuapp.com/'},
-          {name: 'color.js', link: 'https://github.com/khanduri/color.js'},
-          {name: 'EZ Apps - iOS apps', link: 'http://ezapps.herokuapp.com/'},
-          {name: 'Structure extractor - Craigslist', link: ''},
-          {name: 'Transliteration - En to Hi', link: ''},
-          {name: 'ANN - Emotion Recognition', link: ''},
-          {name: 'Sudoku Solver - CSP', link: ''}
-        ],
-        groups: [
-          {name: 'Asha for Education', link: ''},
-          {name: 'Ekal Vidyalaya', link: ''},
-          {name: 'USC Trekkers group', link: ''},
-          {name: 'Engineering Exploration Volunteer', link: ''}
-        ],
-        hobbies: [
-          {name: 'Tennis / Racquet ball enthusiast', link: ''},
-          {name: 'Playing any outdoor sport', link: ''},
-          {name: 'Practicing Yoga', link: ''}
-        ]
+/* Learn */
+var learn = {
+        current: {
+          languages: [
+            ['python', 90],
+            ['javascript', 80]
+          ],
+          tools: [
+            ['vim', 80],
+            ['shell-scripting', 90]
+          ],
+          frameworks: [
+            ['react', 40],
+            ['react native', 40],
+            ['flask', 80]
+          ]
+        },
+        past: {
+          languages: [
+            ['C#', 60],
+            ['Java ', 70],
+            ['PHP', 50],
+            ['Perl', 40],
+            ['C / C++ ', 70],
+            ['Self', 60],
+            ['objective-c', 60]
+          ],
+          tools: [
+            ['eclipse', 60],
+            ['x-code', 60],
+            ['visual-studio', 80]
+          ],
+          frameworks: [
+            ['django', 80],
+            ['jquery', 70],
+            ['angular', 60],
+            ['yeoman', 60],
+            ['code-igniter', 50],
+            ['cake-php', 40],
+            ['mason', 50]
+          ]
+        }
       }
 
-React.render(<NavigationComponent />, document.getElementById('navigation'));
-React.render(<AboutComponent />, document.getElementById('about'));
-React.render(<ProjectsComponent items={activities}/>, document.getElementById('projects'));
-React.render(<ContactComponent items={contact}/>, document.getElementById('contact'));
+var ProgressDisplayComponent = React.createClass({
+  render: function(){
+    var title = this.props.title;
+    var current = this.props.items;
+
+   return (
+      <div className="row">
+        <h2 className="text-center">{title}</h2>
+        <div className="row">
+            { Object.keys(current).map(function(category){
+              return (
+                <div className="col-md-4"><div className="middle">{category.toUpperCase()}</div><br/>
+                  {current[category].sort(function(a, b){ return -(a[1] - b[1]); }).map(function(topic){
+                    return (<div className="progress"><div className={"progress-bar prog-"+topic[1]}>{topic[0]}</div></div>)
+                  })}
+                </div>
+              )
+            })}
+        </div>
+      </div>
+    )
+  }
+});
+
+var LearnComponent = React.createClass({
+  render : function(){
+ 
+    var rows = [];
+
+    var current = this.props.items.current;
+    rows.push(<ProgressDisplayComponent items={current} title={"Current interest"}/>);
+
+    var past = this.props.items.past;
+    rows.push(<ProgressDisplayComponent items={past} title={"In the Past"}/>);
+
+
+    return (
+      <section id="learn" className="content-section">
+        <div className="content-section learn-section">
+          <div className="row">
+            <div className="col-lg-8 col-lg-offset-2">
+              {rows}           
+            </div>
+          </div>
+        </div>
+      </section>
+    )
+  }
+});
+
+React.render(<LearnComponent items={learn}/>, document.getElementById('learn'));
 
