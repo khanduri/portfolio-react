@@ -1,5 +1,9 @@
 
 
+HEROKU:
+ - heroku config:set BUILDPACK_URL=https://github.com/heroku/heroku-buildpack-python
+
+
 STEPS:
   - virtualenv --no-site-packages env
   - source env/bin/activate

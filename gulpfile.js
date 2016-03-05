@@ -17,7 +17,7 @@ gulp.task('default', function(){
   gulp.watch('app/static/scripts/jsx/*.jsx', ['transform']);
 });
 
-gulp.task('build', ['clean'], function(){
+gulp.task('build', ['clean', 'sass'], function(){
   return gulp.src('app/static/scripts/jsx/*.jsx')
     .pipe(react({harmony: false,}))
     .pipe(uglify())
