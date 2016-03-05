@@ -1,31 +1,12 @@
 
 /* Education */
-var education = {
-        institutes: [
-          {
-            title: 'University of Southern California',
-            loc: 'Los Angeles, CA',
-            course: 'Masters in Computer Science',
-            desc: 'Specialization in Human Language technology (Applied Artificial Intelligence)',
-            dates: '2008 - 2009'
-          },
-          {
-            title: 'University of Waterloo',
-            loc: 'Ontario, Canada',
-            course: 'Bachelor in Applied Science – Computer Engineering (Honors)',
-            desc: 'Option in Software Engineering',
-            dates: '2003 - 2008'
-          }
-        ]
-      }
-
 
 var EducationDisplayComponent = React.createClass({
   render : function(){
- 
+
     var institute = this.props.items;
     return (
-      <li className="timeline-inverted">
+      <li className="timeline-inverted" key={institute.id}>
         <div className="timeline-badge"><i className="fa fa-graduation-cap"></i></div>
         <div className="timeline-panel">
           <div className="timeline-heading">
@@ -44,7 +25,7 @@ var EducationDisplayComponent = React.createClass({
 
 var EducationComponent = React.createClass({
   render : function(){
- 
+
     var rows = [];
 
     var education = this.props.items;
@@ -73,4 +54,4 @@ var EducationComponent = React.createClass({
   }
 });
 
-React.render(<EducationComponent items={education} />, document.getElementById('education'));
+React.render(<EducationComponent items={info.education} key={"education"} />, document.getElementById('education'));

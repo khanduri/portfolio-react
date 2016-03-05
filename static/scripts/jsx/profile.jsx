@@ -1,17 +1,5 @@
 
 
-var profile = {
-        name: {
-          first: 'Prashant',
-          last: 'Khanduri'
-        },
-        desc: {
-          first : 'Software Developer at Affirm',
-          second : 'Currently in San Francisco, CA'
-        }
-    }
-
-
 var HeaderComponent = React.createClass({
   render: function(){
     var profile = this.props.items;
@@ -32,7 +20,7 @@ var HeaderComponent = React.createClass({
     )
   }
 });
-React.render(<HeaderComponent items={profile} />, document.getElementById('header'));
+React.render(<HeaderComponent items={info.profile} />, document.getElementById('header'));
 
 
 var FooterComponent = React.createClass({
@@ -45,4 +33,4 @@ var FooterComponent = React.createClass({
     )
   }
 });
-React.render(<FooterComponent items={profile} />, document.getElementById('footer'));
+React.render(<FooterComponent items={info.profile} />, document.getElementById('footer'));

@@ -1,11 +1,5 @@
 
 /* Contact */
-var contact = {
-  github: 'khanduri',
-  twitter: 'khandurip',
-  linkedin: 'prashantkhanduri',
-  facebook: 'prashant.khanduri'
-}
 
 var ContactComponent = React.createClass({
   render: function(){
@@ -29,6 +23,4 @@ var ContactComponent = React.createClass({
     )
   }
 });
-React.render(<ContactComponent items={contact}/>, document.getElementById('contact'));
-
-
+React.render(<ContactComponent items={info.contact}/>, document.getElementById('contact'));

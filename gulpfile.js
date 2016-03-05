@@ -6,9 +6,10 @@ var gulp = require('gulp'),
     // browserify = require('browserify'),
     // reactify = require('reactify'),
     // jsx = require('gulp-jsx'),
-    // react = require('gulp-react'),
+    react = require('gulp-react'),
     concat = require('gulp-concat'),
     clean = require('gulp-clean'),
+    uglify = require('gulp-uglify'),
     sass = require('gulp-sass');
 
 
@@ -19,12 +20,21 @@ gulp.task('default', function(){
   gulp.watch('static/scripts/jsx/*.jsx', ['transform']);
 });
 
+gulp.task('build', ['clean'], function(){
+  return gulp.src('static/scripts/jsx/*.jsx')
+    .pipe(react({harmony: false,}))
+    .pipe(uglify())
+    .pipe(concat('main.js'))
+    .pipe(gulp.dest('static/scripts/js/compiled'))
+    .pipe(size());
+});
+
 gulp.task('transform', ['clean'], function(){
   // The transformer is not working for me .. I'm just using the client side transformer
   return gulp.src('static/scripts/jsx/*.jsx')
     // .pipe(browserify({transform: [reactify]}))
     // .pipe(jsx({factory: 'React.createClass'}))
-    // .pipe(react({harmony: false,}))
+    .pipe(react({harmony: false,}))
     .pipe(concat('main.js'))
     .pipe(gulp.dest('static/scripts/js/compiled'))
     .pipe(size());
@@ -43,4 +53,3 @@ gulp.task('sass', function () {
     .pipe(sass.sync().on('error', sass.logError))
     .pipe(gulp.dest('static/styles/css'));
 });
-

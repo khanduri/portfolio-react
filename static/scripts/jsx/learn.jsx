@@ -1,47 +1,5 @@
 
 /* Learn */
-var learn = {
-        current: {
-          languages: [
-            ['python', 90],
-            ['javascript', 80]
-          ],
-          tools: [
-            ['vim', 80],
-            ['shell-scripting', 90]
-          ],
-          frameworks: [
-            ['react', 40],
-            ['react native', 40],
-            ['flask', 80]
-          ]
-        },
-        past: {
-          languages: [
-            ['C#', 60],
-            ['Java ', 70],
-            ['PHP', 50],
-            ['Perl', 40],
-            ['C / C++ ', 70],
-            ['Self', 60],
-            ['objective-c', 60]
-          ],
-          tools: [
-            ['eclipse', 60],
-            ['x-code', 60],
-            ['visual-studio', 80]
-          ],
-          frameworks: [
-            ['django', 80],
-            ['jquery', 70],
-            ['angular', 60],
-            ['yeoman', 60],
-            ['code-igniter', 50],
-            ['cake-php', 40],
-            ['mason', 50]
-          ]
-        }
-      }
 
 var ProgressDisplayComponent = React.createClass({
   render: function(){
@@ -69,7 +27,7 @@ var ProgressDisplayComponent = React.createClass({
 
 var LearnComponent = React.createClass({
   render : function(){
- 
+
     var rows = [];
 
     var current = this.props.items.current;
@@ -84,7 +42,7 @@ var LearnComponent = React.createClass({
         <div className="content-section learn-section">
           <div className="row">
             <div className="col-lg-8 col-lg-offset-2">
-              {rows}           
+              {rows}
             </div>
           </div>
         </div>
@@ -93,6 +51,4 @@ var LearnComponent = React.createClass({
   }
 });
 
-React.render(<LearnComponent items={learn}/>, document.getElementById('learn'));
-
-
+React.render(<LearnComponent items={info.learn}/>, document.getElementById('learn'));

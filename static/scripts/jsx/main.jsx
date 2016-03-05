@@ -32,5 +32,3 @@ var NavigationComponent = React.createClass({
   }
 });
 React.render(<NavigationComponent />, document.getElementById('navigation'));
-
-
