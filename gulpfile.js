@@ -29,6 +29,7 @@ gulp.task('build', ['clean', 'sass'], function(){
 gulp.task('transform', ['clean'], function(){
   return gulp.src('app/static/scripts/jsx/*.jsx')
     .pipe(react({harmony: false,}))
+    .pipe(uglify())
     .pipe(concat('main.js'))
     .pipe(gulp.dest('app/static/scripts/js/compiled'))
     .pipe(size());
