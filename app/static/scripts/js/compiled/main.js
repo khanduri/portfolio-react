@@ -49,7 +49,10 @@ var ContactComponent = React.createClass({displayName: "ContactComponent",
     )
   }
 });
-React.render(React.createElement(ContactComponent, {items: info.contact}), document.getElementById('contact'));
+
+if (info.contact){
+  React.render(React.createElement(ContactComponent, {items: info.contact}), document.getElementById('contact'));
+}
 
 
 /* Education */
@@ -107,7 +110,9 @@ var EducationComponent = React.createClass({displayName: "EducationComponent",
   }
 });
 
-React.render(React.createElement(EducationComponent, {items: info.education, key: "education"}), document.getElementById('education'));
+if (info.education){
+  React.render(React.createElement(EducationComponent, {items: info.education, key: "education"}), document.getElementById('education'));
+}
 
 
 /* Experience */
@@ -205,7 +210,9 @@ var ExperienceComponent = React.createClass({displayName: "ExperienceComponent",
   }
 });
 
-React.render(React.createElement(ExperienceComponent, {items: info.experience}), document.getElementById('experience'));
+if (info.experience){
+  React.render(React.createElement(ExperienceComponent, {items: info.experience}), document.getElementById('experience'));
+}
 
 
 /* Learn */
@@ -260,7 +267,9 @@ var LearnComponent = React.createClass({displayName: "LearnComponent",
   }
 });
 
-React.render(React.createElement(LearnComponent, {items: info.learn}), document.getElementById('learn'));
+if (info.learn){
+  React.render(React.createElement(LearnComponent, {items: info.learn}), document.getElementById('learn'));
+}
 
 
 
@@ -319,8 +328,6 @@ var HeaderComponent = React.createClass({displayName: "HeaderComponent",
     )
   }
 });
-React.render(React.createElement(HeaderComponent, {items: info.profile}), document.getElementById('header'));
-
 
 var FooterComponent = React.createClass({displayName: "FooterComponent",
   render: function(){
@@ -332,7 +339,10 @@ var FooterComponent = React.createClass({displayName: "FooterComponent",
     )
   }
 });
-React.render(React.createElement(FooterComponent, {items: info.profile}), document.getElementById('footer'));
+if (info.profile){
+  React.render(React.createElement(HeaderComponent, {items: info.profile}), document.getElementById('header'));
+  React.render(React.createElement(FooterComponent, {items: info.profile}), document.getElementById('footer'));
+}
 
 
 /* Activities */
@@ -373,4 +383,6 @@ var ProjectsComponent = React.createClass({displayName: "ProjectsComponent",
     )
   }
 });
-React.render(React.createElement(ProjectsComponent, {items: info.activities}), document.getElementById('projects'));
+if (info.activities){
+  React.render(React.createElement(ProjectsComponent, {items: info.activities}), document.getElementById('projects'));
+}

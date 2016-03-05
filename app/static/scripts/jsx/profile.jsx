@@ -20,8 +20,6 @@ var HeaderComponent = React.createClass({
     )
   }
 });
-React.render(<HeaderComponent items={info.profile} />, document.getElementById('header'));
-
 
 var FooterComponent = React.createClass({
   render: function(){
@@ -33,4 +31,7 @@ var FooterComponent = React.createClass({
     )
   }
 });
-React.render(<FooterComponent items={info.profile} />, document.getElementById('footer'));
+if (info.profile){
+  React.render(<HeaderComponent items={info.profile} />, document.getElementById('header'));
+  React.render(<FooterComponent items={info.profile} />, document.getElementById('footer'));
+}

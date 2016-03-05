@@ -37,4 +37,6 @@ var ProjectsComponent = React.createClass({
     )
   }
 });
-React.render(<ProjectsComponent items={info.activities}/>, document.getElementById('projects'));
+if (info.activities){
+  React.render(<ProjectsComponent items={info.activities}/>, document.getElementById('projects'));
+}

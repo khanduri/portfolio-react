@@ -5847,13 +5847,13 @@ p {
     line-height: 1.6; } }
 
 a {
-  color: #e49812;
+  color: rgba(205, 2, 7, 0.69);
   -webkit-transition: all .2s ease-in-out;
   -moz-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out; }
   a:hover, a:focus {
     text-decoration: none;
-    color: #e39712; }
+    color: rgba(204, 2, 7, 0.69); }
 
 .light {
   font-weight: 400; }
@@ -5867,7 +5867,7 @@ a {
   padding: 10px; }
 
 .progress-bar {
-  background: #e49812; }
+  background: rgba(205, 2, 7, 0.69); }
 
 .navbar-custom {
   margin-bottom: 0;
@@ -5913,36 +5913,56 @@ a {
   .navbar-custom.top-nav-collapse {
     border-bottom: 1px solid rgba(221, 221, 221, 0.3); } }
 
-.intro, .error {
+.intro {
+  background: #222 url(../../images/prashant-bg.jpg) no-repeat scroll bottom center; }
+
+.error {
+  background: #222 url(../../images/404-bg.jpg) no-repeat scroll bottom center; }
+
+.opk {
+  background: #222 url(../../images/opk-bg.jpg) no-repeat scroll bottom center; }
+
+.madhuri {
+  background: #222 url(../../images/madhuri-bg.jpg) no-repeat scroll bottom center; }
+
+.puneet {
+  background: #222 url(../../images/puneet-bg.jpg) no-repeat scroll bottom center; }
+
+.parisha {
+  background: #222 url(../../images/parisha-bg.jpg) no-repeat scroll bottom center; }
+
+.sehul {
+  background: #222 url(../../images/sehul-bg.jpg) no-repeat scroll center center; }
+
+.prashant {
+  background: #222 url(../../images/prashant-bg.jpg) no-repeat scroll bottom center; }
+
+.intro, .error, .opk, .madhuri, .puneet, .parisha, .sehul, .prashant {
   display: table;
   width: 100%;
   height: auto;
   padding: 100px 0;
   text-align: center;
-  color: #ddd;
-  background: #222 url(../../images/intro-bg.jpg) no-repeat scroll bottom center;
+  color: rgba(205, 2, 7, 0.59);
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover; }
-  .intro .intro-body, .error .intro-body {
+  .intro .intro-body, .error .intro-body, .opk .intro-body, .madhuri .intro-body, .puneet .intro-body, .parisha .intro-body, .sehul .intro-body, .prashant .intro-body {
     display: table-cell;
     vertical-align: middle; }
-    .intro .intro-body .brand-heading, .error .intro-body .brand-heading {
+    .intro .intro-body .brand-heading, .error .intro-body .brand-heading, .opk .intro-body .brand-heading, .madhuri .intro-body .brand-heading, .puneet .intro-body .brand-heading, .parisha .intro-body .brand-heading, .sehul .intro-body .brand-heading, .prashant .intro-body .brand-heading {
       font-size: 40px; }
-    .intro .intro-body .intro-text, .error .intro-body .intro-text {
+    .intro .intro-body .intro-text, .error .intro-body .intro-text, .opk .intro-body .intro-text, .madhuri .intro-body .intro-text, .puneet .intro-body .intro-text, .parisha .intro-body .intro-text, .sehul .intro-body .intro-text, .prashant .intro-body .intro-text {
       font-size: 18px; }
 
-.error {
-  background: #222 url(../../images/404-bg.jpg) no-repeat scroll bottom center; }
-
 @media (min-width: 767px) {
-  .intro {
+  .intro, .error, .opk, .madhuri, .puneet, .parisha, .sehul, .prashant {
     height: 100%;
     padding: 0; }
-    .intro .intro-body .brand-heading {
+    .intro .intro-body .brand-heading, .error .intro-body .brand-heading, .opk .intro-body .brand-heading, .madhuri .intro-body .brand-heading, .puneet .intro-body .brand-heading, .parisha .intro-body .brand-heading, .sehul .intro-body .brand-heading, .prashant .intro-body .brand-heading {
       font-size: 100px; }
-    .intro .intro-body .intro-text {
+    .intro .intro-body .intro-text, .error .intro-body .intro-text, .opk .intro-body .intro-text, .madhuri .intro-body .intro-text, .puneet .intro-body .intro-text, .parisha .intro-body .intro-text, .sehul .intro-body .intro-text, .prashant .intro-body .intro-text {
       font-size: 25px; } }
 
 .btn-circle {
@@ -6002,29 +6022,29 @@ a {
   transition: all .3s ease-in-out; }
 
 .btn-default {
-  color: #e49812;
+  color: rgba(205, 2, 7, 0.69);
   background-color: rgba(255, 255, 255, 0);
-  border-color: #e49812; }
+  border-color: rgba(205, 2, 7, 0.69); }
   .btn-default:focus, .btn-default.focus {
-    color: #e49812;
+    color: rgba(205, 2, 7, 0.69);
     background-color: rgba(230, 230, 230, 0);
-    border-color: #6e4909; }
+    border-color: rgba(79, 1, 3, 0.69); }
   .btn-default:hover {
-    color: #e49812;
+    color: rgba(205, 2, 7, 0.69);
     background-color: rgba(230, 230, 230, 0);
-    border-color: #ab720e; }
+    border-color: rgba(144, 1, 5, 0.69); }
   .btn-default:active, .btn-default.active,
   .open > .btn-default.dropdown-toggle {
-    color: #e49812;
+    color: rgba(205, 2, 7, 0.69);
     background-color: rgba(230, 230, 230, 0);
-    border-color: #ab720e; }
+    border-color: rgba(144, 1, 5, 0.69); }
     .btn-default:active:hover, .btn-default:active:focus, .btn-default:active.focus, .btn-default.active:hover, .btn-default.active:focus, .btn-default.active.focus,
     .open > .btn-default.dropdown-toggle:hover,
     .open > .btn-default.dropdown-toggle:focus,
     .open > .btn-default.dropdown-toggle.focus {
-      color: #e49812;
+      color: rgba(205, 2, 7, 0.69);
       background-color: rgba(212, 212, 212, 0);
-      border-color: #6e4909; }
+      border-color: rgba(79, 1, 3, 0.69); }
   .btn-default:active, .btn-default.active,
   .open > .btn-default.dropdown-toggle {
     background-image: none; }
@@ -6033,15 +6053,15 @@ a {
   fieldset[disabled] .btn-default:focus,
   fieldset[disabled] .btn-default.focus {
     background-color: rgba(255, 255, 255, 0);
-    border-color: #e49812; }
+    border-color: rgba(205, 2, 7, 0.69); }
   .btn-default .badge {
     color: rgba(255, 255, 255, 0);
-    background-color: #e49812; }
+    background-color: rgba(205, 2, 7, 0.69); }
   .btn-default:hover, .btn-default:focus {
-    border: 1px solid #e49812;
+    border: 1px solid rgba(205, 2, 7, 0.69);
     outline: none;
     color: #222;
-    background-color: #e49812; }
+    background-color: rgba(205, 2, 7, 0.69); }
 
 ul.banner-social-buttons {
   margin-top: 0; }
@@ -6087,7 +6107,7 @@ body {
   height: 100%; }
 
 .progress {
-  color: #e49812; }
+  color: rgba(205, 2, 7, 0.69); }
 
 .prog-00 {
   width: 00%; }
@@ -6180,7 +6200,7 @@ body {
   position: absolute;
   top: 16px;
   margin-left: -25px;
-  background-color: #e49812;
+  background-color: rgba(205, 2, 7, 0.69);
   z-index: 100;
   border-radius: 50%; }
 

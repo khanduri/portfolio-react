@@ -125,15 +125,22 @@ a {
   }
 }
 
+.intro {background: $grayscale-dark url(../../images/prashant-bg.jpg) no-repeat scroll bottom center;}
+.error {background: $grayscale-dark url(../../images/404-bg.jpg) no-repeat scroll bottom center;}
+.opk {background: $grayscale-dark url(../../images/opk-bg.jpg) no-repeat scroll bottom center;}
+.madhuri {background: $grayscale-dark url(../../images/madhuri-bg.jpg) no-repeat scroll bottom center;}
+.puneet {background: $grayscale-dark url(../../images/puneet-bg.jpg) no-repeat scroll bottom center;}
+.parisha {background: $grayscale-dark url(../../images/parisha-bg.jpg) no-repeat scroll bottom center;}
+.sehul {background: $grayscale-dark url(../../images/sehul-bg.jpg) no-repeat scroll center center;}
+.prashant {background: $grayscale-dark url(../../images/prashant-bg.jpg) no-repeat scroll bottom center;}
 
-.intro, .error{
+.intro, .error, .opk, .madhuri, .puneet, .parisha, .sehul, .prashant {
   display: table;
   width: 100%;
   height: auto;
   padding: 100px 0;
   text-align: center;
-  color: $grayscale-light;
-  background: $grayscale-dark url(../../images/intro-bg.jpg) no-repeat scroll bottom center;
+  color: $grayscale-intro;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -151,12 +158,8 @@ a {
   }
 }
 
-.error {
-  background: $grayscale-dark url(../../images/404-bg.jpg) no-repeat scroll bottom center;
-}
-
 @media(min-width:767px) {
-  .intro {
+  .intro, .error, .opk, .madhuri, .puneet, .parisha, .sehul, .prashant {
     height: 100%;
     padding: 0;
     .intro-body {

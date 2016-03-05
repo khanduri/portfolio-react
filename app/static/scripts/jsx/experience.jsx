@@ -94,4 +94,6 @@ var ExperienceComponent = React.createClass({
   }
 });
 
-React.render(<ExperienceComponent items={info.experience} />, document.getElementById('experience'));
+if (info.experience){
+  React.render(<ExperienceComponent items={info.experience} />, document.getElementById('experience'));
+}

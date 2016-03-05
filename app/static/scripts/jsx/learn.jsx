@@ -51,4 +51,6 @@ var LearnComponent = React.createClass({
   }
 });
 
-React.render(<LearnComponent items={info.learn}/>, document.getElementById('learn'));
+if (info.learn){
+  React.render(<LearnComponent items={info.learn}/>, document.getElementById('learn'));
+}

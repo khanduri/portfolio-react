@@ -54,4 +54,6 @@ var EducationComponent = React.createClass({
   }
 });
 
-React.render(<EducationComponent items={info.education} key={"education"} />, document.getElementById('education'));
+if (info.education){
+  React.render(<EducationComponent items={info.education} key={"education"} />, document.getElementById('education'));
+}
