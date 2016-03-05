@@ -1,5 +1,5 @@
 .idea/*
 env/*
 node_modules/*
-static/bower_components/*
-static/scripts/js/compiled/*
+app/static/bower_components/*
+app/static/scripts/js/compiled/*

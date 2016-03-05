@@ -125,7 +125,8 @@ a {
   }
 }
 
-.intro {
+
+.intro, .error{
   display: table;
   width: 100%;
   height: auto;
@@ -148,6 +149,10 @@ a {
       font-size: 18px;
     }
   }
+}
+
+.error {
+  background: $grayscale-dark url(../../images/404-bg.jpg) no-repeat scroll bottom center;
 }
 
 @media(min-width:767px) {
