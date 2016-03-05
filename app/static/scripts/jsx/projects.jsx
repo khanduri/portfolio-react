@@ -1,7 +1,7 @@
 
 /* Activities */
 
-var ProjectsComponent = React.createClass({
+var ActivitiesComponent = React.createClass({
   render: function(){
     var activities = this.props.items;
 
@@ -38,5 +38,5 @@ var ProjectsComponent = React.createClass({
   }
 });
 if (info.activities){
-  React.render(<ProjectsComponent items={info.activities}/>, document.getElementById('projects'));
+  React.render(<ActivitiesComponent items={info.activities}/>, document.getElementById('activities'));
 }

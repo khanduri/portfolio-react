@@ -1,4 +1,8 @@
 {
+   "navigation": [
+      "about", "learn", "experience", "education", "activities", "contact"
+   ],
+   "about": "prashant",
    "learn":{
       "current":{
          "languages":[

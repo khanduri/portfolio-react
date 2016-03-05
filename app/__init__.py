@@ -9,6 +9,7 @@ app = Flask(__name__)
 def home():
     return render_template('home.html')
 
+
 FILE_MAP = {
     'opk': ('app/data/opk.json', 'opk'),
     'madhuri': ('app/data/madhuri.json', 'madhuri'),
@@ -18,8 +19,25 @@ FILE_MAP = {
     'prashant': ('app/data/prashant.json', 'prashant'),
 }
 
+
+FAMILY_NICKNAMES = {
+    'opk': ['omprakash', 'opk'],
+    'madhuri': ['madhuri', 'madhu'],
+    'sehul': ['sehul'],
+    'parisha': ['parisha', 'pari'],
+    'puneet': ['puneet', 'tikku'],
+    'prashant': ['prashant', 'phulti'],
+}
+
+
 @app.route("/<alias>")
 def member(alias):
+
+    for map_alias, nicknames in FAMILY_NICKNAMES.iteritems():
+        if alias in nicknames:
+            alias = map_alias
+            break
+
     data_file_path, class_name = FILE_MAP.get(alias, (None, None))
     if not data_file_path:
         return render_template('error.html')

@@ -1,6 +1,6 @@
 
 /* About */
-var AboutComponent = React.createClass({
+var AboutPrashantComponent = React.createClass({
   render: function(){
     return (
         <section id="about" className="content-section text-center">
@@ -13,13 +13,14 @@ var AboutComponent = React.createClass({
               <p>I also <a href="http://khanduri.github.io/">blog</a>, but I haven't really scoped out the topics I'd like to talk about. For now, I'm just using it to collect ideas that I find interesting. I hope someday a pattern will emerge</p>
               <p></p>
               <p>In case you're wondering, the above picture is me trying to slide down Mt Rainier (Paradise snowplay area) and not doing a great job at it. I like the picture though</p>
-              <p>You know a lot about me now! .. <a href='#' ng-click="scroll('#contact')">Ok your turn</a></p>
+              <p>You know a lot about me now! .. <a href='#contact' class="page-scroll">Ok your turn</a></p>
             </div>
           </div>
         </section>
     )
   }
 });
-React.render(<AboutComponent />, document.getElementById('about'));
 
-
+if (info.about == 'prashant'){
+  React.render(<AboutPrashantComponent />, document.getElementById('about'));
+}

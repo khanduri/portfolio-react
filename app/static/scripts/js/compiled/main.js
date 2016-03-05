@@ -1,6 +1,6 @@
 
 /* About */
-var AboutComponent = React.createClass({displayName: "AboutComponent",
+var AboutPrashantComponent = React.createClass({displayName: "AboutPrashantComponent",
   render: function(){
     return (
         React.createElement("section", {id: "about", className: "content-section text-center"}, 
@@ -13,16 +13,17 @@ var AboutComponent = React.createClass({displayName: "AboutComponent",
               React.createElement("p", null, "I also ", React.createElement("a", {href: "http://khanduri.github.io/"}, "blog"), ", but I haven't really scoped out the topics I'd like to talk about. For now, I'm just using it to collect ideas that I find interesting. I hope someday a pattern will emerge"), 
               React.createElement("p", null), 
               React.createElement("p", null, "In case you're wondering, the above picture is me trying to slide down Mt Rainier (Paradise snowplay area) and not doing a great job at it. I like the picture though"), 
-              React.createElement("p", null, "You know a lot about me now! .. ", React.createElement("a", {href: "#", "ng-click": "scroll('#contact')"}, "Ok your turn"))
+              React.createElement("p", null, "You know a lot about me now! .. ", React.createElement("a", {href: "#contact", class: "page-scroll"}, "Ok your turn"))
             )
           )
         )
     )
   }
 });
-React.render(React.createElement(AboutComponent, null), document.getElementById('about'));
 
-
+if (info.about == 'prashant'){
+  React.render(React.createElement(AboutPrashantComponent, null), document.getElementById('about'));
+}
 
 
 /* Contact */
@@ -276,6 +277,16 @@ if (info.learn){
 /* Navigation */
 var NavigationComponent = React.createClass({displayName: "NavigationComponent",
   render: function(){
+
+    var navigation = this.props.items;
+
+    var rows = [];
+    navigation.map(function(section){
+      if (section != 'profile'){
+        rows.push(React.createElement("li", null, React.createElement("a", {className: "page-scroll", href: "#"+section}, section)));
+      }
+    });
+
     return (
     React.createElement("nav", {className: "navbar navbar-custom navbar-fixed-top", role: "navigation"}, 
         React.createElement("div", {className: "container"}, 
@@ -291,12 +302,7 @@ var NavigationComponent = React.createClass({displayName: "NavigationComponent",
             React.createElement("div", {className: "collapse navbar-collapse navbar-right navbar-main-collapse"}, 
                 React.createElement("ul", {className: "nav navbar-nav"}, 
                     React.createElement("li", {className: "hidden"}, React.createElement("a", {href: "#page-top"})), 
-                    React.createElement("li", null, React.createElement("a", {className: "page-scroll", href: "#about"}, "About")), 
-                    React.createElement("li", null, React.createElement("a", {className: "page-scroll", href: "#learn"}, "Learn")), 
-                    React.createElement("li", null, React.createElement("a", {className: "page-scroll", href: "#experience"}, "Experience")), 
-                    React.createElement("li", null, React.createElement("a", {className: "page-scroll", href: "#education"}, "Education")), 
-                    React.createElement("li", null, React.createElement("a", {className: "page-scroll", href: "#projects"}, "Activities")), 
-                    React.createElement("li", null, React.createElement("a", {className: "page-scroll", href: "#contact"}, "Contact"))
+                     rows 
                 )
             )
         )
@@ -304,7 +310,9 @@ var NavigationComponent = React.createClass({displayName: "NavigationComponent",
     )
   }
 });
-React.render(React.createElement(NavigationComponent, null), document.getElementById('navigation'));
+if (info.navigation){
+  React.render(React.createElement(NavigationComponent, {items: info.navigation}), document.getElementById('navigation'));
+}
 
 
 
@@ -347,7 +355,7 @@ if (info.profile){
 
 /* Activities */
 
-var ProjectsComponent = React.createClass({displayName: "ProjectsComponent",
+var ActivitiesComponent = React.createClass({displayName: "ActivitiesComponent",
   render: function(){
     var activities = this.props.items;
 
@@ -384,5 +392,5 @@ var ProjectsComponent = React.createClass({displayName: "ProjectsComponent",
   }
 });
 if (info.activities){
-  React.render(React.createElement(ProjectsComponent, {items: info.activities}), document.getElementById('projects'));
+  React.render(React.createElement(ActivitiesComponent, {items: info.activities}), document.getElementById('activities'));
 }

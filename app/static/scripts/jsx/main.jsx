@@ -3,6 +3,16 @@
 /* Navigation */
 var NavigationComponent = React.createClass({
   render: function(){
+
+    var navigation = this.props.items;
+
+    var rows = [];
+    navigation.map(function(section){
+      if (section != 'profile'){
+        rows.push(<li><a className="page-scroll" href={"#"+section}>{section}</a></li>);
+      }
+    });
+
     return (
     <nav className="navbar navbar-custom navbar-fixed-top" role="navigation">
         <div className="container">
@@ -18,12 +28,7 @@ var NavigationComponent = React.createClass({
             <div className="collapse navbar-collapse navbar-right navbar-main-collapse">
                 <ul className="nav navbar-nav">
                     <li className="hidden"><a href="#page-top"></a></li>
-                    <li><a className="page-scroll" href="#about">About</a></li>
-                    <li><a className="page-scroll" href="#learn">Learn</a></li>
-                    <li><a className="page-scroll" href="#experience">Experience</a></li>
-                    <li><a className="page-scroll" href="#education">Education</a></li>
-                    <li><a className="page-scroll" href="#projects">Activities</a></li>
-                    <li><a className="page-scroll" href="#contact">Contact</a></li>
+                    { rows }
                 </ul>
             </div>
         </div>
@@ -31,4 +36,6 @@ var NavigationComponent = React.createClass({
     )
   }
 });
-React.render(<NavigationComponent />, document.getElementById('navigation'));
+if (info.navigation){
+  React.render(<NavigationComponent items={info.navigation} />, document.getElementById('navigation'));
+}
