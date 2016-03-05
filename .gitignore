@@ -3,3 +3,4 @@ env/*
 node_modules/*
 app/static/bower_components/*
 app/static/scripts/js/compiled/*
+app/static/styles/css/*
