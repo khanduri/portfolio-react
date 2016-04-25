@@ -58,35 +58,39 @@
    "activities":{
       "projects":[
          {
-            "name":"Portfolio Generator - This site",
+            "name":"Pulsico: Set future reminders",
+            "link":"http://pulsico-stage.herokuapp.com/"
+         },
+         {
+            "name":"Portfolio Generator: This site",
             "link":"https://github.com/khanduri/portfolio-react"
          },
          {
-            "name":"Workout Generator",
+            "name":"AuroFit: Plan your Workout",
             "link":"https://workoutgen-stage.herokuapp.com/"
          },
          {
-            "name":"color.js",
+            "name":"Color.js",
             "link":"https://github.com/khanduri/color.js"
          },
          {
-            "name":"EZ Apps - iOS apps",
+            "name":"EZ Apps: iOS apps",
             "link":"http://ezapps.herokuapp.com/"
          },
          {
-            "name":"Structure extractor - Craigslist",
+            "name":"Structure extractor: Craigslist",
             "link":""
          },
          {
-            "name":"Transliteration - En to Hi",
+            "name":"Transliteration: En to Hi",
             "link":""
          },
          {
-            "name":"ANN - Emotion Recognition",
+            "name":"Emotion Recognition: Aritificial Neural Networks",
             "link":""
          },
          {
-            "name":"Sudoku Solver - CSP",
+            "name":"Sudoku Solver: CSP",
             "link":""
          }
       ],
@@ -109,6 +113,10 @@
          }
       ],
       "hobbies":[
+         {
+            "name":"Weekend runner",
+            "link":"http://www.mapmyrun.com/profile/83707647/"
+         },
          {
             "name":"Tennis / Racquet ball enthusiast",
             "link":""

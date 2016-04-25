@@ -17,3 +17,5 @@ STEPS:
   - update bower.json with dependencies
   - bower install
   - npm install gulp --save-dev
+./run.py
+gulp
