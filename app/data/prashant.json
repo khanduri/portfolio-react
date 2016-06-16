@@ -59,7 +59,7 @@
       "projects":[
          {
             "name":"Pulsico: Set future reminders",
-            "link":"http://pulsico-stage.herokuapp.com/"
+            "link":"http://pulsico.herokuapp.com/"
          },
          {
             "name":"Portfolio Generator: This site",
